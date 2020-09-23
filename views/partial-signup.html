@@ -1,54 +1,36 @@
-<form action="/users/signup" method="POST" class="form">
-  <div style="background-color:#EFDC76; border: 1px grey solid;text-align: center;height:20rem;width:20rem;top:50%;margin-top:10rem;margin-left:auto;" class="container is-fluid">
-    
-    <div class="field">
-      <label class="label">Full Name</label>
-      <div class="control">
-        <input name="name" class="input" type="text" placeholder="Type Your Full Name...">
+<section class="hero is-fullheight">
+  <div class="hero-body has-text-centered">
+      <div class="login">
+      <img src="#" width="325px" />
+          <form action="/users/signup" method="POST" class="form">
+              <div class="field">
+                <div class="control">
+                    <input class="input is-medium is-rounded" name="name" type="text" placeholder="Type Your Full Name..." value="">
+                </div>
+              </div>
+              <div class="field">
+                  <div class="control">
+                      <input class="input is-medium is-rounded" name="email" class="input " type="email" placeholder="hello@example.com" value="">
+                  </div>
+              </div>
+              <div class="field">
+                  <div class="control">
+                      <input name="password" class="input is-medium is-rounded" type="password" placeholder="**********" value="">
+                  </div>
+              </div>
+              <br />
+              <button class="button is-block is-fullwidth is-primary is-medium is-rounded" type="submit">
+                  Sign Up
+              </button>
+          </form>
+          <br>
+          <nav class="level">
+              <div class="level-item has-text-centered">
+                  <div>
+                    Already have an account? <a href="/users/login">Login</a>
+                  </div>
+              </div>
+          </nav>
       </div>
-    </div>
-
-
-    <div class="field">
-      <label class="label">Email</label>
-      <div class="control has-icons-left has-icons-right">
-        <input name="email" class="input " type="email" placeholder="Type your email..." value="">
-        <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
-        </span>
-        <span class="icon is-small is-right">
-          <i class="fas fa-exclamation-triangle"></i>
-        </span>
-      </div>
-      <!-- <p class="help is-danger">This email is invalid</p> -->
-    </div>
-
-    <div class="field">
-      <label class="label">Password</label>
-      <div class="control has-icons-left has-icons-right">
-          <input name="password" class="input " type="password" placeholder="Enter your password..." value="bulma">
-          <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-          </span>
-          <span class="icon is-small is-right">
-              <i class="fas fa-check"></i>
-          </span>
-      </div>
-      <!-- <p class="help is-success">This username is available</p> -->
   </div>
-
-
-    
-
-
-    <div class="field is-grouped">
-      <div class="control">
-        <button  class="button is-link is-outlined is-light">Submit</button>
-      </div>
-      <div class="control">
-        <button class="button is-link is-light">Cancel</button>
-      </div>
-    </div>
-
-  </div>
-</form>
+</section>
