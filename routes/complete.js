@@ -14,6 +14,7 @@ router.post("/", async(request,response) => {
     const taskID = request.body.complete;
     console.log(request.body)
     let todoModelData = await todoModel.deleteOne(taskID);
+
     response.redirect("/todo")
     
 })

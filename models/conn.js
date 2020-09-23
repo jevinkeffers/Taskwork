@@ -1,8 +1,8 @@
 // ==================PGP-Header (from elephant sql)===========
 const hostname = "lallah.db.elephantsql.com";
-const database = "thmpvpwv";
-const user = "thmpvpwv";
-const password = "B3AGIAMLvINg2NH_PeQiRN7WusgtDAWH";
+const database = "vauxdqjx";
+const user = "vauxdqjx";
+const password = "2JsriaDQsYQq2tLEYQPZM-8TFSOp6xOP";
 
 
 // ==================PGP-Wrapper=============================
