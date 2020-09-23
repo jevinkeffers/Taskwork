@@ -9,12 +9,12 @@ router.get("/",async (request,response)=>{
 
         response.render("template",{
             locals: {
-                title: "Index"
+                title: "Login"
 
             },
             //This is the actual view
             partials:{
-                partial:"partial-index"
+                partial:"partial-login"
             }
         })
 

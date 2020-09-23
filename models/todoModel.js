@@ -38,6 +38,16 @@ class todoList {
             return error.message;
         }
     }
+
+    async progressOne(id) {
+        try {
+            const response = await db.any(``)
+        }
+        catch (error) {
+            console.log("ERROR: ", error.message);
+            return error.message;
+        }
+    }
 }
 
 module.exports = todoList;
