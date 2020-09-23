@@ -1,0 +1,67 @@
+<div class="container is-fluid">
+
+
+    <div style="background-color:rgba(169, 136, 105,0.4); border: 1px grey solid;text-align: center;height:auto;width:auto;top:50%;margin-top:10rem;margin-left:auto;"
+        class="container is-fluid">
+
+        <h1 class="title">${title}</h1>
+        <div class="columns">
+            <div class="column auto">
+                <div class="tile is-ancestor">
+                    <div class="tile is-vertical is-6">
+                        <div class="tile">
+                            <div class="tile is-parent is-vertical">
+                                <form action="/complete" method="POST">
+                                    ${data.map(rev => {
+                                    return `
+                                    <article style="background-color:#EFDC76;margin-top:2rem;" class="tile is-child box">
+                                        <ul>
+                                            
+                                            <div class="field">
+                                                <button style="height:0.5rem;width:0.5rem;" type="submit" name="complete" value="${rev.id}"
+                                                    class="button is-rounded is-danger is-outlined">X</button>
+                                            </div>
+                                            ${rev.todo_task}
+                                        </ul>
+                                    </article>
+
+                                    `
+                                    }).join('')}
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <form style="margin-top:16px" action="/todo" method="POST">
+
+            <label class="label"><h1 class="title" ><strong>What's Next:</strong></h1></label>
+            <textarea name="todoitem" value="" class="textarea" placeholder="e.g. Hello world"></textarea>
+
+
+            <div style="margin:1rem 1rem 0 0;"class="columns">
+                <div class="column is-narrow">
+                    <div class="field">
+                        <button style="background-color:#EFDC76;" type="Submit" id="radButton" class="button is-outlined ">Post Task</button>
+                    </div>
+                </div>
+                <div class="column is-narrow">
+                    <a href="/users/logout" class="button is-danger">Logout</a>
+                </div>
+            </div>
+            
+
+        </form>
+
+
+
+    </div>
+
+
+</div>
