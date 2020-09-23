@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const todoModel = require('../models/todoModel');
+const inprogModel = require('../models/inproglistModel');
 
 router.get("/",async (request,response)=>{
     //console.log("user_id is: ",request.session.user_id)
@@ -14,6 +15,10 @@ router.post("/", async(request,response) => {
     const taskID = request.body.complete;
     console.log(request.body)
     let todoModelData = await todoModel.deleteOne(taskID);
+
+
+    
+
 
     response.redirect("/todo")
     
