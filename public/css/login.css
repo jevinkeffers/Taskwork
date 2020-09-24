@@ -3,20 +3,26 @@
   }
   
   :root {
-    --shadowDark: #001F58;
+    --shadowDark: #001B4E;
     --background: #002364;
-    --shadowLight: #001F58;
+    --shadowLight: #001B4E;
+  }
+
+  .hero {
+    background: var(--background);
+    background-image: url(../images/loginBackgroundLight.png);
   }
   
-  body {
+  /* body {
     background: var(--background);
-  }
+  } */
   
   .hero-body {
     justify-content: center;
   }
   
   .login {
+    background: #001337;
     border-radius: 25px;
     padding: 1.5rem;
     box-shadow: 8px 8px 15px var(--shadowDark), -8px -8px 15px var(--shadowLight);
