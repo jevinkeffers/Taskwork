@@ -78,7 +78,7 @@ router.post("/login", async(request,response)=>{
             const {name, user_id} = res;
             request.session.name = name; 
             request.session.user_id = user_id;
-            response.redirect("/todo")
+            response.redirect("/projects")
         }else{
             response.sendStatus(401);
         }
