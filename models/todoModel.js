@@ -51,6 +51,19 @@ class todoList {
         }
     }
 
+    static async backOne_inprogress(id) {
+        try {
+            let response = await db.result(`UPDATE todolist SET todo_task = in_progress WHERE id =$1;`,[id]); 
+
+            response = await db.result(`UPDATE todolist SET in_progress = NULL  WHERE id =$1;`,[id]);      
+            return response;
+        }
+        catch (error) {
+            console.log("ERROR: ", error.message);
+            return error.message;
+        }
+    }
+
 
 
     static async progressOne_intesting(id) {
@@ -58,6 +71,19 @@ class todoList {
             let response = await db.result(`UPDATE todolist SET in_testing = in_progress WHERE id =$1;`,[id]); 
 
             response = await db.result(`UPDATE todolist SET in_progress = NULL  WHERE id =$1;`,[id]);      
+            return response;
+        }
+        catch (error) {
+            console.log("ERROR: ", error.message);
+            return error.message;
+        }
+    }
+
+    static async backOne_intesting(id) {
+        try {
+            let response = await db.result(`UPDATE todolist SET in_progress = in_testing WHERE id =$1;`,[id]); 
+
+            response = await db.result(`UPDATE todolist SET in_testing = NULL  WHERE id =$1;`,[id]);      
             return response;
         }
         catch (error) {
@@ -78,12 +104,12 @@ class todoList {
             return error.message;
         }
     }
-
-    static async progressOne_completed_intesting(id) {
+   
+    static async  backOne_complete(id) {
         try {
-            let response = await db.result(`UPDATE todolist SET completed = in_testing WHERE id =$1;`,[id]); 
+            let response = await db.result(`UPDATE todolist SET in_testing = completed WHERE id =$1;`,[id]); 
 
-            response = await db.result(`UPDATE todolist SET in_testing = NULL  WHERE id =$1;`,[id]);      
+            response = await db.result(`UPDATE todolist SET completed = NULL  WHERE id =$1;`,[id]);      
             return response;
         }
         catch (error) {
@@ -91,6 +117,7 @@ class todoList {
             return error.message;
         }
     }
+    
 }
 
 module.exports = todoList;
