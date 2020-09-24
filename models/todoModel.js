@@ -7,9 +7,10 @@ class todoList {
         
     }
     //Static Async Method 
-    static async getAll(id){
+    static async getAll(id,projectid){
         try{
-            const response = await db.any(`SELECT * FROM todolist WHERE users_id = $1;`,[id]);
+            const response = await db.any(`SELECT * FROM todolist INNER JOIN projects on todolist.project_id = projects.id WHERE todolist.users_id = $1 AND todolist.project_id = $2;`,[id,projectid]);
+            // const response = await db.any(`SELECT * FROM todolist WHERE users_id = $1;`,[id]);
             return response;
         } catch (error){
             return error.message;
@@ -17,11 +18,11 @@ class todoList {
     }
 
     //Post will go here
-    static async submitTask(id,task){
+    static async submitTask(id,task,projectid){
         
         try{
-            const response = await db.result(`INSERT INTO todolist (users_id,todo_task)
-            VALUES ($1,$2);`,[id,task]);        
+             const response = await db.result(`INSERT INTO projectstodo (users_id,todo_task,projectid)
+            // VALUES ($1,$2,$3);`,[id,task,projectid]);
             return response;
         } catch (error){
             return error.message;
