@@ -36,6 +36,10 @@ a:hover {
     color: #00d1b2;
 }
 
+body {
+    color: #fff;
+}
+
 .button.is-primary {
     background-color: #E7807C;
     border-color: transparent;
