@@ -98,3 +98,13 @@ input {
     --background: #002364;
     --shadowLight: #001B4E;
 }
+
+/* To-Do Route CSS: Alphabetized from here down */
+
+.background-grey {
+    background: #ecedf8;
+}
+
+.section {
+    padding: 2rem 1.5rem;
+}

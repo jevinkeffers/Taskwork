@@ -37,7 +37,7 @@ app.use(cookieParser());
 //invoke session storage
 app.use(
     session({
-        store: new FileStore(),
+        // store: new FileStore(),
         secret: "awesome",
         resave: false,
         saveUninitialized: true,
