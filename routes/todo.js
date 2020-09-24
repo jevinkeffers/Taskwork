@@ -5,29 +5,34 @@ const bcrypt = require("bcryptjs");
 
 // bringing in data from each model
 const todoModel = require('../models/todoModel');
-const completedList = require('../models/completedlistModel');
-const inprogList = require('../models/inproglistModel');
-const testingList = require('../models/testinglistModel');
+
 
 
 router.get("/",async (request,response)=>{
     const userid = request.session.user_id; 
-    const todoModelData = await todoModel.getAll(userid);
-    const completedListData = await completedList.getAllCompletedlist(userid);
-    const testingData = await testingList.getAllTesting(userid);
-    const inprogData = await inprogList.getAllInprog(userid);
-    console.log("this is the to do model data:", todoModelData);
-    console.log("this is the completed model data:", completedListData);
-    console.log("this is the testing model data:", testingData);
-    console.log("this is the inprog model data:", inprogData);
+    let todoModelData = await todoModel.getAll(userid);
+
+    //Filtering through data recieved from the model to remove null from rendering in the view
+    for(let i = 0;i<todoModelData.length;i++){
+        if (todoModelData[i].todo_task == null){
+            todoModelData[i].todo_task = '';
+        }
+        if (todoModelData[i].in_progress == null){
+            todoModelData[i].in_progress = '';
+        }
+        if (todoModelData[i].in_testing == null){
+            todoModelData[i].in_testing = '';
+        }
+        if (todoModelData[i].completed == null){
+            todoModelData[i].completed = '';
+        }
+    }
+  
 
     response.render("template",{
         locals: {
             title: "To Do",
             data: todoModelData,
-            testingData: testingData,
-            inprogData: inprogData,
-            completedData: completedListData,
             is_logged_in: request.session.is_logged_in
         },
         //This is the actual view
@@ -51,9 +56,6 @@ router.post("/", async(request,response) => {
     //     locals: {
     //         title: "To Do",
     //         data: todoModelData,
-    //         testingData: testingData,
-    //         inprogData: inprogData,
-    //         completedData: completedListData,
     //         is_logged_in: request.session.is_logged_in
     //     },
     //     //This is the actual view

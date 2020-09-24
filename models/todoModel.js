@@ -10,7 +10,6 @@ class todoList {
     static async getAll(id){
         try{
             const response = await db.any(`SELECT * FROM todolist WHERE users_id = $1;`,[id]);
-            // console.log(response);
             return response;
         } catch (error){
             return error.message;
@@ -39,9 +38,12 @@ class todoList {
         }
     }
 
-    async progressOne(id) {
+    static async progressOne(id) {
         try {
-            const response = await db.any(``)
+            let response = await db.result(`UPDATE todolist SET in_progress = todo_task WHERE id =$1;`,[id]); 
+
+            response = await db.result(`UPDATE todolist SET todo_task = NULL  WHERE id =$1;`,[id]);      
+            return response;
         }
         catch (error) {
             console.log("ERROR: ", error.message);

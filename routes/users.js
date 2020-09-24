@@ -69,7 +69,7 @@ router.post("/signup", async(request,response)=>{
 
 router.post("/login", async(request,response)=>{
     const {email, password} = request.body;
-    // console.log(request.body);
+    console.log("Post request:", request.body);
     const userInstance = new UsersModel(null,null, email, password);
     userInstance.login().then(res => {
         console.log("response is", res);
