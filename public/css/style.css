@@ -1,9 +1,10 @@
 /* Brand Colors */
 
-/*  */
-
-
-
+/* Navy: #002364 */
+/* Blue: #2560e3 */
+/* Green: #00d1b2 */
+/* Pink: #e7807c */
+/* Soft Grey: #ecedf8 */
 
 /* Login and Sign Up Screen CSS */
 
@@ -28,6 +29,11 @@
 
 a {
     font-weight: 600;
+    color: #2560e3;
+}
+
+a:hover {
+    color: #00d1b2;
 }
 
 .button.is-primary {
@@ -56,8 +62,21 @@ input {
     color: #fff;
 }
 
+.input:active, .input:focus, .is-active.input, .is-active.textarea, .is-focused.input, .is-focused.textarea, .select select.is-active, .select select.is-focused, .select select:active, .select select:focus, .textarea:active, .textarea:focus {
+    border-color: #2560e3;
+    box-shadow: none;
+}
+
+.is-danger.input, .is-danger.textarea {
+    border-color: transparent;
+}
+
+.is-danger.input:active, .is-danger.input:focus, .is-danger.is-active.input, .is-danger.is-active.textarea, .is-danger.is-focused.input, .is-danger.is-focused.textarea, .is-danger.textarea:active, .is-danger.textarea:focus {
+    box-shadow: none;
+}
+
 .label {
-    color: #363636;
+    color: #00d1b2;
     display: block;
     font-size: 1rem;
     font-weight: 700;
@@ -69,11 +88,9 @@ input {
     padding: 1.5rem;
     box-shadow: 8px 8px 15px var(--shadowDark), -8px -8px 15px var(--shadowLight);
 }
-  
+
 :root {
     --shadowDark: #001B4E;
     --background: #002364;
     --shadowLight: #001B4E;
 }
-
-  
