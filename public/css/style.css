@@ -1,0 +1,96 @@
+/* Brand Colors */
+
+/* Navy: #002364 */
+/* Blue: #2560e3 */
+/* Green: #00d1b2 */
+/* Pink: #e7807c */
+/* Soft Grey: #ecedf8 */
+
+/* Login and Sign Up Screen CSS */
+
+* {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #fff !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #fff !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #fff !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #fff !important;
+}
+
+/* Login and Sign Up Screen CSS: Alphabetized from here down */
+
+a {
+    font-weight: 600;
+    color: #2560e3;
+}
+
+a:hover {
+    color: #00d1b2;
+}
+
+.button.is-primary {
+    background-color: #E7807C;
+    border-color: transparent;
+    color: #fff;
+}
+
+.hero {
+    background: var(--background);
+    background-image: url(../images/loginBackgroundLight.png);
+}
+
+.hero-body {
+    justify-content: center;
+}
+
+input {
+    background: var(--shadowDark) !important;
+}
+
+.input, .select select, .textarea {
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.input:active, .input:focus, .is-active.input, .is-active.textarea, .is-focused.input, .is-focused.textarea, .select select.is-active, .select select.is-focused, .select select:active, .select select:focus, .textarea:active, .textarea:focus {
+    border-color: #2560e3;
+    box-shadow: none;
+}
+
+.is-danger.input, .is-danger.textarea {
+    border-color: #E7807C;
+}
+
+.is-danger.input:active, .is-danger.input:focus, .is-danger.is-active.input, .is-danger.is-active.textarea, .is-danger.is-focused.input, .is-danger.is-focused.textarea, .is-danger.textarea:active, .is-danger.textarea:focus {
+    box-shadow: none;
+}
+
+.label {
+    color: #00d1b2;
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.login {
+    background: #001337;
+    border-radius: 25px;
+    padding: 1.5rem;
+    box-shadow: 8px 8px 15px var(--shadowDark), -8px -8px 15px var(--shadowLight);
+}
+
+:root {
+    --shadowDark: #001B4E;
+    --background: #002364;
+    --shadowLight: #001B4E;
+}
