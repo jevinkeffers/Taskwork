@@ -47,7 +47,7 @@ router.get("/",async (request,response)=>{
 router.post("/", async(request,response) => {
     const userid = request.session.user_id; 
     const todoitem = request.body.todoitem;
-
+    console.log("this is the request body from the submit button :", request.body)
     await todoModel.submitTask(userid,todoitem);
 
     todoModelData = await todoModel.getAll(userid);

@@ -12,10 +12,10 @@ router.get("/",async (request,response)=>{
 
 router.post("/", async(request,response) => {
     
-    // console.log("request body from the todolist  --> ", request.body)
-    // Defining keys from the request body
+     console.log("request body from the todolist  --> ", request.body)
+    // // Defining keys from the request body
     const entryDelete = request.body.Delete;
-    const entryProgress = request.body.Progress;
+    // const entryProgress = request.body.Progress;
 
     //This is how we will decide what to do when the form is submitted from todolist view
     if(entryDelete != undefined ){
@@ -24,10 +24,7 @@ router.post("/", async(request,response) => {
         const taskID = entryDelete;
         let todoModelData = await todoModel.deleteOne(taskID);
     }else{
-        // progress the entry
-        console.log("we will progress id: ",entryProgress)
-        const taskID = entryProgress;
-        todoModelData = await todoModel. progressOne_intesting(taskID);
+        // we will use this for going back a spot
     }
     
     

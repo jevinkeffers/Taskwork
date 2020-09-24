@@ -82,3 +82,10 @@ const complete = require('./routes/complete');
 app.use('/complete',complete);
 
 
+const complete_inprogress = require('./routes/complete_inprogress');
+app.use('/complete_inprogress',complete_inprogress);
+
+
+
+const complete_complete = require('./routes/complete_complete');
+app.use('/complete_complete',complete_complete);
