@@ -1,21 +1,23 @@
 <section class="hero is-fullheight">
   <div class="hero-body has-text-centered">
       <div class="login">
-      <img src="#" width="325px" />
+      <img src="../images/logoWhite.png" width="325px" />
           <form action="/users/signup" method="POST" class="form">
               <div class="field">
+                <label class="label">Full Name</label>
                 <div class="control">
-                    <input class="input is-medium is-rounded" name="name" type="text" placeholder="Type Your Full Name..." value="">
+                    <input class="input is-medium is-rounded is-danger" name="name" type="text" placeholder="Type Your Full Name..." value="">
                 </div>
               </div>
               <div class="field">
                   <div class="control">
-                      <input class="input is-medium is-rounded" name="email" class="input " type="email" placeholder="hello@example.com" value="">
+                      <input class="input is-medium is-rounded is-danger" name="email" class="input " type="email" placeholder="hello@example.com" value="">
                   </div>
               </div>
               <div class="field">
+                <label class="label">Password</label>
                   <div class="control">
-                      <input name="password" class="input is-medium is-rounded" type="password" placeholder="**********" value="">
+                      <input name="password" class="input is-medium is-rounded is-danger" type="password" placeholder="**********" value="">
                   </div>
               </div>
               <br />

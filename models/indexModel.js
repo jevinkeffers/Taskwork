@@ -1,13 +1,10 @@
-// Importing the database from PG-Promise
-const db = require("./conn");
+// // Importing the database from PG-Promise
+// const db = require("./conn");
 
-class restauList {
-    constructor(name){
-        this.name = name;
-        
-    }
-   
+// class restauList {
+//     constructor(name){
+//         this.name = name;
+//     }
+// }
 
-}
-
-module.exports = restauList;
+// module.exports = restauList;

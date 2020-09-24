@@ -22,7 +22,6 @@ router.get("/login",async (request,response)=>{
 })
 
 router.get("/signup",async (request,response)=>{
-   
     // console.log(request.session.is_logged_in)
     response.render("template",{
         locals: {
@@ -73,7 +72,7 @@ router.post("/login", async(request,response)=>{
     const userInstance = new UsersModel(null,null, email, password);
     userInstance.login().then(res => {
         console.log("response is", res);
-         request.session.is_logged_in = res.isValid;
+        request.session.is_logged_in = res.isValid;
         console.log(request.session.is_logged_in);
         if(!!res.isValid){
             const {name, user_id} = res;

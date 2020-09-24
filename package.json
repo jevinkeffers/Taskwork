@@ -1,7 +1,7 @@
 {
-  "name": "backend-project",
+  "name": "taskwork",
   "version": "1.0.0",
-  "description": "To do list project",
+  "description": "Taskwork",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
