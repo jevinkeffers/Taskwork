@@ -31,18 +31,31 @@
             </form>
         </div>
         <div class="column">
-            <form action="/complete" method="POST">
+            <form action="/complete_inprogress" method="POST">
 
                 <div class="box">
-                    <div class="heading">In Progress</div>
+                    <div class="heading">IN PROGRESS</div>
                     ${data.map(rev => { return `
-                    <div class="title">${rev.in_progress}</div>
-                    <!-- <label class="checkbox">
-                            <input type="checkbox" id='todoCheck'>
-                            Progress Task?
-                          </label> -->
-
+                    <div class="title">${rev.in_progress}
+                    ${rev.in_progress != ''? `
+                    <span class="control">
+                        <label class="radio">
+                            <input type="radio" value="${rev.id}" name="Progress">
+                            Progress
+                        </label>
+                        <label class="radio">
+                            <input type="radio" value="${rev.id}" name="Delete">
+                            Delete
+                        </label>
+                    </span>
+                    ` : `
+                    
+                    `}</div>
                     ` }).join('')}
+                    <br>
+                    <button style="margin-top:1rem;" type="Submit" id="updateTodo" class="button is-outlined">
+                        Update List
+                    </button>
                 </div>
             </form>
         </div>
@@ -52,16 +65,28 @@
                 <div class="box">
                     <div class="heading">In Testing</div>
                     ${data.map(rev => { return `
-                    <div class="title">${rev.in_testing}</div>
-
-
-                    <!-- <label class="checkbox">
-                            <input type="checkbox" id='todoCheck'>
-                            Progress Task?
-                          </label> -->
-
+                    <div class="title">${rev.in_testing}
+                    ${rev.in_testing != ''? `
+                    <span class="control">
+                        <label class="radio">
+                            <input type="radio" value="${rev.id}" name="Progress">
+                            Progress
+                        </label>
+                        <label class="radio">
+                            <input type="radio" value="${rev.id}" name="Delete">
+                            Delete
+                        </label>
+                    </span>
+                    ` : `
+                    
+                    `}</div>
                     ` }).join('')}
+                    <br>
+                    <button style="margin-top:1rem;" type="Submit" id="updateTodo" class="button is-outlined">
+                        Update List
+                    </button>
                 </div>
+                
             </form>
         </div>
         <div class="column">
@@ -70,13 +95,22 @@
                 <div class="box">
                     <div class="heading">Complete</div>
                     ${data.map(rev => { return `
-                    <div class="title">${rev.completed}</div>
-                    <!-- <label class="checkbox">
-                            <input type="checkbox" id='todoCheck'>
-                            Progress Task?
-                          </label> -->
-
+                    <div class="title">${rev.completed}
+                    ${rev.completed != ''? `
+                    <span class="control">
+                        <label class="radio">
+                            <input type="radio" value="${rev.id}" name="Delete">
+                            Delete
+                        </label>
+                    </span>
+                    ` : `
+                    
+                    `}</div>
                     ` }).join('')}
+                    <br>
+                    <button style="margin-top:1rem;" type="Submit" id="updateTodo" class="button is-outlined">
+                        Update List
+                    </button>
                 </div>
             </form>
         </div>
@@ -125,12 +159,12 @@
     <label class="label">
         <h1 class="title"><strong>What's Next:</strong></h1>
     </label>
-    <textarea name="todoitem" value="" class="textarea" placeholder="e.g. Hello world"></textarea>
+    <textarea style="color: #2a2a2d" name="todoitem" value="" class="textarea" placeholder="e.g. Hello world"></textarea>
 
     <div style="margin: 1rem 1rem 0 0" class="columns">
         <div class="column is-narrow">
             <div class="field">
-                <button style="background-color: #efdc76" type="Submit" id="radButton" class="button is-outlined">
+                <button color="#2a2a2d" type="Submit" id="radButton" class="button is-outlined">
                     Post Task
                 </button>
             </div>

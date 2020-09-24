@@ -50,6 +50,34 @@ class todoList {
             return error.message;
         }
     }
+
+
+
+    static async progressOne_intesting(id) {
+        try {
+            let response = await db.result(`UPDATE todolist SET in_testing = in_progress WHERE id =$1;`,[id]); 
+
+            response = await db.result(`UPDATE todolist SET in_progress = NULL  WHERE id =$1;`,[id]);      
+            return response;
+        }
+        catch (error) {
+            console.log("ERROR: ", error.message);
+            return error.message;
+        }
+    }
+
+    static async progressOne_completed(id) {
+        try {
+            let response = await db.result(`UPDATE todolist SET completed = in_testing WHERE id =$1;`,[id]); 
+
+            response = await db.result(`UPDATE todolist SET in_testing = NULL  WHERE id =$1;`,[id]);      
+            return response;
+        }
+        catch (error) {
+            console.log("ERROR: ", error.message);
+            return error.message;
+        }
+    }
 }
 
 module.exports = todoList;

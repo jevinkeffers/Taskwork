@@ -68,7 +68,7 @@ input {
 }
 
 .is-danger.input, .is-danger.textarea {
-    border-color: #E7807C;
+    border-color: transparent;
 }
 
 .is-danger.input:active, .is-danger.input:focus, .is-danger.is-active.input, .is-danger.is-active.textarea, .is-danger.is-focused.input, .is-danger.is-focused.textarea, .is-danger.textarea:active, .is-danger.textarea:focus {
@@ -93,4 +93,8 @@ input {
     --shadowDark: #001B4E;
     --background: #002364;
     --shadowLight: #001B4E;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> faa86ce66316608b04dd100e08938de5b374d9ca
