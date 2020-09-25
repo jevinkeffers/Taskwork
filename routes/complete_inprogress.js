@@ -4,6 +4,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const todoModel = require('../models/todoModel');
 
+const projectIDModel = require('../models/projectModel');
 
 router.get("/",async (request,response)=>{
   
@@ -17,6 +18,8 @@ router.post("/", async(request,response) => {
     const entryDelete = request.body.Delete;
     const entryProgress = request.body.Progress;
     const entryBack = request.body.Back;
+    let projectIDdata = await projectIDModel.getprojectID();
+    let projectID = projectIDdata.current_project_num;
     // console.log("request body from the todolist  --> ", entryBack)
 
     //This is how we will decide what to do when the form is submitted from todolist view
@@ -24,19 +27,19 @@ router.post("/", async(request,response) => {
         //delete the entry 
         console.log("we will delete id: ",entryDelete)
         const taskID = entryDelete;
-        let todoModelData = await todoModel.deleteOne(taskID);
+        let todoModelData = await todoModel.deleteOne(taskID, projectID);
     }
     if (entryProgress != undefined) {
         // progress the entry
         console.log("we will progress id: ",entryProgress)
         const taskID = entryProgress;
-        todoModelData = await todoModel. progressOne_intesting(taskID);
+        todoModelData = await todoModel. progressOne_intesting(taskID, projectID);
     }
     if (entryBack != undefined) {
         // progress the entry
         
         const taskID = entryBack;
-        todoModelData = await todoModel.backOne_inprogress(taskID);
+        todoModelData = await todoModel.backOne_inprogress(taskID, projectID);
     }
     
     
