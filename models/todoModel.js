@@ -16,6 +16,15 @@ class todoList {
         }
     }
 
+    static async getProjectName(id, projectID){
+        try{
+            const response = await db.one(`SELECT name FROM projects WHERE users_id = $1 AND id = $2;`,[id, projectID]);
+            return response;
+        } catch (error){
+            return error.message;
+        }
+    }
+
     //Post will go here
     static async submitTask(id,task,projectID){
         

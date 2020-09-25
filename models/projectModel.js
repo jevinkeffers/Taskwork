@@ -56,6 +56,36 @@ class projectModel {
             return error.message;
         }
     }
+    static async currentuserID(userID){
+        
+        try{
+            const response = await db.result(`UPDATE currentproject SET current_userid = $1 WHERE id =1;`,[userID]);        
+            return response;
+        } catch (error){
+            return error.message;
+        }
+    }
+    static async getuserID(){
+        
+        try{
+            const response = await db.one(`SELECT current_userid FROM currentproject WHERE id =1;`);        
+            return response;
+        } catch (error){
+            return error.message;
+        }
+    }
+    static async  markReview(id, projectID) {
+        try {
+            let response = await db.result(`UPDATE projects SET is_complete = true WHERE users_id =$1 and id = $2;`,[id, projectID]); 
+            
+            return response;
+        }
+        catch (error) {
+            console.log("ERROR: ", error.message);
+            return error.message;
+        }
+    }
+    
     
 
 
