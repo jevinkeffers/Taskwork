@@ -7,7 +7,9 @@ class projectModel {
     constructor(id,name,project){
         this.id = id;
         this.name = name;
-        this.project = project
+
+        this.project = project;
+
     }
     static async getAll(id){
         try{
