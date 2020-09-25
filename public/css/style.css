@@ -10,6 +10,11 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
+body {
+    background: #002364;
+    background-image: url(../images/loginBackgroundLight.png);
+}
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #fff !important;
 }
@@ -101,6 +106,17 @@ input {
 
 .background-grey {
     background: #FBFBFE;
+    border-radius: 0px;
+}
+
+.background-navy {
+    background: #001337;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.background-white {
+    background: #ffffff;
+    border-radius: 0px 0px 4px 4px;
 }
 
 .breadcrumb a {
@@ -155,4 +171,9 @@ input {
 .textarea.grey:active {
     border-color: none !important;
     box-shadow: none;
+}
+
+.footer {
+    background-color: transparent;
+    padding: 1.5rem;
 }
