@@ -1,76 +1,106 @@
-<section class="hero">
-    <div class="hero-body has-text-centered">
-        <div class="login">
-        <img src="../images/logoWhite_TaskPage.png" width="325px"/>
-    </div>
-</section>
-
-<section class="section background-grey">
-  <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/projects">Projects</a></li>
-      <li class="is-active"><a href="/todo" aria-current="page">Tasks</a></li>
-    </ul>
-  </nav>
-  <div class="container">
-    <div class="columns is-desktop">
-      <div class="column">
-        <h1 class="title">Project Name</h1>
-        <h2 class="subtitle">
-          A brief description of the project!
-        </h2>
-      </div>
-      <div class="column">
-        <form action="/todo" method="POST">
-            <label class="label">
-                <h1 class="title">Add Task</h1>
-            </label>
-            <textarea name="todoitem" value="" class="textarea grey" placeholder="e.g. Hello world"></textarea>
-            <button type="Submit" id="radButton" class="button is-grey">
-                  Post Task
-            </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section">
-    <div class="columns is-desktop">
+  <section class="hero background-navy">
+      <div class="hero-body has-text-centered">
+        <div class="container">
+          <img src="../images/logoWhite_TaskPage.png" width="325px"/>
+        </div>
+      </div>
+  </section>
+
+  <section class="section background-grey">
+    <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li class="is-active"><a href="/todo" aria-current="page">Tasks</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="columns is-desktop">
         <div class="column">
-            <form action="/complete" method="POST">
-                <div class="box">
-                    <div class="heading">To do</div>
-                    ${data.map(rev => { return `
-                    <div class="subtitle has-text-centered">${rev.todo_task}
-                    ${rev.todo_task != ''? `
+          <h1 class="title">Project Name</h1>
+          <h2 class="subtitle">
+            A brief description of the project!
+          </h2>
+        </div>
+        <div class="column">
+          <form action="/todo" method="POST">
+              <label class="label">
+                  <h1 class="title">Add Task</h1>
+              </label>
+              <textarea name="todoitem" value="" class="textarea grey" placeholder="e.g. Hello world"></textarea>
+              <button type="Submit" id="radButton" class="button is-grey">
+                    Post Task
+              </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section background-white">
+      <div class="columns is-desktop">
+          <div class="column">
+              <form action="/complete" method="POST">
+                  <div class="box">
+                      <div class="heading">To do</div>
+                      ${data.map(rev => { return `
+                      <div class="subtitle has-text-centered">${rev.todo_task}
+                      ${rev.todo_task != ''? `
+                        <span class="control">
+                            <div class="buttons has-addons is-centered">
+                                <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
+                                    <span>Delete</span>
+                                </button>
+                                <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Progress">
+                                  <span>Progress</span>
+                                </button>
+                              </div>
+                        </span>
+                      ` : `
+                      `}</div>
+                      ` }).join('')}
+                      <br>
+                  </div>
+              </form>
+          </div>
+
+          <div class="column">
+              <form action="/complete_inprogress" method="POST">
+                  <div class="box">
+                      <div class="heading">IN PROGRESS</div>
+                      ${data.map(rev => { return `
+                      <div class="subtitle has-text-centered">${rev.in_progress}
+                      ${rev.in_progress != ''? `
                       <span class="control">
                           <div class="buttons has-addons is-centered">
-                              <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
-                                  <span>Delete</span>
-                              </button>
-                              <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Progress">
-                                <span>Progress</span>
-                              </button>
-                            </div>
+                            <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Back">
+                              <span>Back</span>
+                            </button>
+                            <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
+                              <span>Delete</span>
+                            </button>
+                            <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Progress">
+                              <span>Progress</span>
+                            </button>
+                          </div>
                       </span>
-                    ` : `
-                    `}</div>
-                    ` }).join('')}
-                    <br>
-                </div>
-            </form>
-        </div>
+                      ` : `
+                      `}</div>
+                      ` }).join('')}
+                      <br>
+                  </div>
+              </form>
+          </div>
 
-        <div class="column">
-            <form action="/complete_inprogress" method="POST">
-                <div class="box">
-                    <div class="heading">IN PROGRESS</div>
-                    ${data.map(rev => { return `
-                    <div class="subtitle has-text-centered">${rev.in_progress}
-                    ${rev.in_progress != ''? `
-                    <span class="control">
+          <div class="column">
+              <form action="/in_testing" method="POST">
+                  <div class="box">
+                      <div class="heading">In Testing</div>
+                      ${data.map(rev => { return `
+                      <div class="subtitle has-text-centered">${rev.in_testing}
+                      ${rev.in_testing != ''? `
+                      <span class="control">
                         <div class="buttons has-addons is-centered">
                           <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Back">
                             <span>Back</span>
@@ -82,79 +112,49 @@
                             <span>Progress</span>
                           </button>
                         </div>
-                    </span>
-                    ` : `
-                    `}</div>
-                    ` }).join('')}
-                    <br>
-                </div>
-            </form>
-        </div>
+                      </span>
+                      ` : `
+                      `}</div>
+                      ` }).join('')}
+                      <br>
+                  </div>
+              </form>
+          </div>
 
-        <div class="column">
-            <form action="/in_testing" method="POST">
-                <div class="box">
-                    <div class="heading">In Testing</div>
-                    ${data.map(rev => { return `
-                    <div class="subtitle has-text-centered">${rev.in_testing}
-                    ${rev.in_testing != ''? `
-                    <span class="control">
-                      <div class="buttons has-addons is-centered">
-                        <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Back">
-                          <span>Back</span>
-                        </button>
-                        <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
-                          <span>Delete</span>
-                        </button>
-                        <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Progress">
-                          <span>Progress</span>
-                        </button>
-                      </div>
-                    </span>
-                    ` : `
-                    `}</div>
-                    ` }).join('')}
-                    <br>
-                </div>
-            </form>
-        </div>
+          <div class="column">
+              <form action="/complete_complete" method="POST"
+                  <div class="box">
+                      <div class="heading">Complete</div>
+                      ${data.map(rev => { return `
+                      <div class="subtitle has-text-centered">${rev.completed}
+                      ${rev.completed != ''? `
+                      <span class="control">
+                        <div class="buttons has-addons is-centered">
+                          <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Back">
+                            <span>Back</span>
+                          </button>
+                          <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
+                            <span>Delete</span>
+                          </button>
+                        </div>
+                      </span>
+                      ` : `
+                      `}</div>
+                      ` }).join('')}
+                      <br>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </section>
 
-        <div class="column">
-            <form action="/complete_complete" method="POST"
-                <div class="box">
-                    <div class="heading">Complete</div>
-                    ${data.map(rev => { return `
-                    <div class="subtitle has-text-centered">${rev.completed}
-                    ${rev.completed != ''? `
-                    <span class="control">
-                      <div class="buttons has-addons is-centered">
-                        <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Back">
-                          <span>Back</span>
-                        </button>
-                        <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
-                          <span>Delete</span>
-                        </button>
-                      </div>
-                    </span>
-                    ` : `
-                    `}</div>
-                    ` }).join('')}
-                    <br>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
+  <form action="/deleteproject" method="POST">
+  <button type="Submit" id="updateTodo" class="button is-small" value="" name="Delete" >
+  <span>Delete Project</span>
+  </button>
+  </form>
 
-<form action="/deleteproject" method="POST">
-<button type="Submit" id="updateTodo" class="button is-small" value="" name="Delete" >
-<span>Delete Project</span>
-</button>
-</form>
-
-
-<section class="hero">
-  <div class="hero-body has-text-centered">
-      <a href="/users/logout" class="button is-primary">Logout</a>
-  </div>
+  <section class="footer has-text-centered">
+    <a href="/users/logout" class="button is-primary">Logout</a>
+  </section>
 </section>
