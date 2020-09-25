@@ -60,8 +60,13 @@ router.post("/", async(request,response) => {
             
     //     }
     // })
-
-    response.redirect("/todo")
+    
+    if(project == undefined){
+        response.redirect("/todo")
+    }else{
+        response.redirect("/projects")
+    }
+    
 })
 
 
