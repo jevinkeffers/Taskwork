@@ -147,6 +147,10 @@ input {
     box-shadow: none;
 }
 
+/* .textarea.grey:placeholder-shown {
+    color:#363636 !important;
+} */
+
 .textarea.grey:hover {
     border-color: none !important;
     box-shadow: none;
