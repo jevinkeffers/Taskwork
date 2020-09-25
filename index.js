@@ -93,3 +93,6 @@ app.use('/complete_complete',complete_complete);
 
 const in_testing = require('./routes/in_testing');
 app.use('/in_testing',in_testing);
+
+const projects = require('./routes/projects');
+app.use('/projects',projects);
