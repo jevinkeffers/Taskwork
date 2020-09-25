@@ -95,4 +95,6 @@ app.use('/in_testing',in_testing);
 
 const projects = require('./routes/projects');
 app.use('/projects',projects);
-// app.get('/projects', projectId);
+
+const deleteProject = require('./routes/deleteproject');
+app.use('/deleteproject', deleteProject);
