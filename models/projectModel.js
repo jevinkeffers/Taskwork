@@ -85,7 +85,17 @@ class projectModel {
             return error.message;
         }
     }
-    
+   
+    static async  markApproved(id, projectID) {
+        try {
+            let response = await db.result(`UPDATE projects SET is_approved = true WHERE users_id =$1 and id = $2;`,[id, projectID]); 
+            return response;
+        }
+        catch (error) {
+            console.log("ERROR: ", error.message);
+            return error.message;
+        }
+    }
     
 
 

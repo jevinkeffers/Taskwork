@@ -18,6 +18,7 @@ router.post("/", async(request,response) => {
     const entryDelete = request.body.Delete;
     const entryBack = request.body.Back;
     const review = request.body.review;
+    const approved = request.body.approved;
     let projectIDdata = await projectIDModel.getprojectID();
     let projectID = projectIDdata.current_project_num;
     let current_user_id = await projectIDModel.getuserID();
@@ -29,7 +30,8 @@ router.post("/", async(request,response) => {
         //delete the entry 
         console.log("we will delete id: ",entryDelete)
         const taskID = entryDelete;
-        let todoModelData = await todoModel.deleteOne(taskID, projectID);
+        todoModelData = todoModel.deleteOne(taskID, projectID);
+        response.redirect('/todo')
     }
     if(entryBack != undefined){
         // we will use this for going back a spot
@@ -40,6 +42,10 @@ router.post("/", async(request,response) => {
     }
     if(review == 'true'){
         todoModelData = await projectIDModel.markReview(userid,projectID);
+        response.redirect("/projects")
+    }
+    if(approved == 'true'){
+        todoModelData = await projectIDModel.markApproved(userid,projectID);
         response.redirect("/projects")
     }
     // response.redirect("/todo")
