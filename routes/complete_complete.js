@@ -30,7 +30,8 @@ router.post("/", async(request,response) => {
         //delete the entry 
         console.log("we will delete id: ",entryDelete)
         const taskID = entryDelete;
-        let todoModelData = await todoModel.deleteOne(taskID, projectID);
+        todoModelData = todoModel.deleteOne(taskID, projectID);
+        response.redirect('/todo')
     }
     if(entryBack != undefined){
         // we will use this for going back a spot
