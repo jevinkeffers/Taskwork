@@ -102,7 +102,7 @@ input {
     --shadowLight: #001B4E;
 }
 
-/* To-Do Route CSS: Alphabetized from here down */
+/* To-Do and Projects Routes CSS: Alphabetized from here down */
 
 .background-grey {
     background: #FBFBFE;
@@ -144,6 +144,23 @@ input {
     color: #fff;
 }
 
+button.subtitle {
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 1px;
+    color: #2560e3;
+    justify-items: center;
+    align-items: center;
+}
+
+button.subtitle:hover {
+    color: #E7807C;
+}
+
+button.subtitle:focus {
+    outline: none;
+}
+
 .section {
     padding: 2rem 1.5rem;
 }
@@ -153,6 +170,11 @@ input {
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.25;
+}
+
+.subtitle:not(:last-child) {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .textarea.grey {
