@@ -10,9 +10,11 @@ const todoModel = require('../models/todoModel');
 
 router.get("/",async (request,response)=>{
     const userid = request.session.user_id; 
-    let todoModelData = await todoModel.getAll(userid);
+    let todoModelData = await todoModel.getAll(userid,projectId);
+    
 
-    //Filtering through data recieved from the model to remove null from rendering in the view
+
+    // //Filtering through data recieved from the model to remove null from rendering in the view
     for(let i = 0;i<todoModelData.length;i++){
         if (todoModelData[i].todo_task == null){
             todoModelData[i].todo_task = '';
@@ -46,12 +48,13 @@ router.get("/",async (request,response)=>{
 
 router.post("/", async(request,response) => {
     const userid = request.session.user_id; 
+
     const todoitem = request.body.todoitem;
     //console.log("this is the request body from the submit button :", request.body)
     await todoModel.submitTask(userid,todoitem);
 
-    todoModelData = await todoModel.getAll(userid);
-    response.redirect("/todo")
+    // todoModelData = await todoModel.getAll(userid);
+    //response.redirect("/todo")
     // response.render("template",{
     //     locals: {
     //         title: "To Do",

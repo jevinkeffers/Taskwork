@@ -38,11 +38,13 @@ router.get("/",async (request,response)=>{
 router.post("/", async(request,response) => {
     const userid = request.session.user_id; 
     const project = request.body.project;
+
     const project_id = request.body.Project_id
     console.log("project id xxxxyyyyy: ",project_id)
     await projectModel.submitProject(userid,project);
     projectData = await projectModel.getAll(userid);
     
+
     // response.render("template",{
     //     locals: {
     //         title: "To Do",
@@ -56,7 +58,9 @@ router.post("/", async(request,response) => {
     //     }
     // })
 
+
     response.redirect("/todo")
+
 })
 
 

@@ -31,3 +31,11 @@ completed_task varchar,
 users_id integer,
 FOREIGN KEY (users_id) REFERENCES users (id)
 );
+
+CREATE TABLE projects (
+    id serial primary key,
+    name text,
+    users_id integer,
+    FOREIGN KEY (users_id) REFERENCES users (id)
+
+)
