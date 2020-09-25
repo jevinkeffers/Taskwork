@@ -6,6 +6,13 @@
 </section>
 
 <section class="section background-grey">
+  <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="/">Login</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li class="is-active"><a href="/todo" aria-current="page">Tasks</a></li>
+    </ul>
+  </nav>
   <div class="container">
     <div class="columns is-desktop">
       <div class="column">
@@ -19,39 +26,15 @@
             <label class="label">
                 <h1 class="title">Add Task</h1>
             </label>
-            <textarea style="color: #2a2a2d" name="todoitem" value="" class="textarea" placeholder="e.g. Hello world"></textarea>
-            <br>  
-            <button color="#2a2a2d" type="Submit" id="radButton" class="button is-outlined">
+            <textarea name="todoitem" value="" class="textarea grey" placeholder="e.g. Hello world"></textarea>
+            <button type="Submit" id="radButton" class="button is-grey">
                   Post Task
-              </button>
+            </button>
         </form>
       </div>
     </div>
   </div>
 </section>
-
-<!-- <section class="section">
-  <div class="columns is-desktop">
-    <div class="column">
-      <form action="/todo" method="POST">
-          <label class="label">
-              <h1 class="title">Add Task</h1>
-          </label>
-          <textarea style="color: #2a2a2d" name="todoitem" value="" class="textarea" placeholder="e.g. Hello world"></textarea>
-
-          <div style="margin: 1rem 1rem 0 0" class="columns">
-              <div class="column is-narrow">
-                  <div class="field">
-                      <button color="#2a2a2d" type="Submit" id="radButton" class="button is-outlined">
-                          Post Task
-                      </button>
-                  </div>
-              </div>
-          </div>
-      </form>
-    </div>
-  </div>
-</section> -->
 
 <section class="section">
     <div class="columns is-desktop">
@@ -60,14 +43,14 @@
                 <div class="box">
                     <div class="heading">To do</div>
                     ${data.map(rev => { return `
-                    <div class="title has-text-centered">${rev.todo_task}
+                    <div class="subtitle has-text-centered">${rev.todo_task}
                     ${rev.todo_task != ''? `
                       <span class="control">
                           <div class="buttons has-addons is-centered">
-                              <button class="button" type="Submit" id="updateTodo" class="button" value="${rev.id}" name="Delete" >
+                              <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
                                   <span>Delete</span>
                               </button>
-                              <button type="Submit" id="updateTodo" class="button" value="${rev.id}" name="Progress">
+                              <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Progress">
                                 <span>Progress</span>
                               </button>
                             </div>
@@ -85,17 +68,17 @@
                 <div class="box">
                     <div class="heading">IN PROGRESS</div>
                     ${data.map(rev => { return `
-                    <div class="title has-text-centered">${rev.in_progress}
+                    <div class="subtitle has-text-centered">${rev.in_progress}
                     ${rev.in_progress != ''? `
                     <span class="control">
                         <div class="buttons has-addons is-centered">
-                          <button type="Submit" id="updateTodo" class="button" value="${rev.id}" name="Back">
+                          <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Back">
                             <span>Back</span>
                           </button>
-                          <button class="button" type="Submit" id="updateTodo" class="button" value="${rev.id}" name="Delete" >
+                          <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
                             <span>Delete</span>
                           </button>
-                          <button type="Submit" id="updateTodo" class="button" value="${rev.id}" name="Progress">
+                          <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Progress">
                             <span>Progress</span>
                           </button>
                         </div>
@@ -113,17 +96,17 @@
                 <div class="box">
                     <div class="heading">In Testing</div>
                     ${data.map(rev => { return `
-                    <div class="title has-text-centered">${rev.in_testing}
+                    <div class="subtitle has-text-centered">${rev.in_testing}
                     ${rev.in_testing != ''? `
                     <span class="control">
                       <div class="buttons has-addons is-centered">
-                        <button type="Submit" id="updateTodo" class="button" value="${rev.id}" name="Back">
+                        <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Back">
                           <span>Back</span>
                         </button>
-                        <button class="button" type="Submit" id="updateTodo" class="button" value="${rev.id}" name="Delete" >
+                        <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
                           <span>Delete</span>
                         </button>
-                        <button type="Submit" id="updateTodo" class="button" value="${rev.id}" name="Progress">
+                        <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Progress">
                           <span>Progress</span>
                         </button>
                       </div>
@@ -141,14 +124,14 @@
                 <div class="box">
                     <div class="heading">Complete</div>
                     ${data.map(rev => { return `
-                    <div class="title has-text-centered">${rev.completed}
+                    <div class="subtitle has-text-centered">${rev.completed}
                     ${rev.completed != ''? `
                     <span class="control">
                       <div class="buttons has-addons is-centered">
-                        <button type="Submit" id="updateTodo" class="button" value="${rev.id}" name="Back">
+                        <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Back">
                           <span>Back</span>
                         </button>
-                        <button class="button" type="Submit" id="updateTodo" class="button" value="${rev.id}" name="Delete" >
+                        <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
                           <span>Delete</span>
                         </button>
                       </div>

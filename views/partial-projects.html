@@ -1,44 +1,97 @@
-<div class="column">
-    <form action="/complete" method="POST">
+<section class="hero">
+    <div class="hero-body has-text-centered">
+        <div class="login">
+        <img src="../images/logoWhite_TaskPage.png" width="325px"/>
+    </div>
+</section>
 
-        <div class="box">
-            <div class="heading">To do</div>
-            ${data.map(rev => { return `
-            <div class="title">${rev.name}
-            ${rev.name != ''? `
-            <span class="control">
-
-            </span>
-            ` : `
-            
-            `}</div>
-            ` }).join('')}
-            <br>
-            <button style="margin-top:1rem;" type="Submit" id="updateTodo" class="button is-outlined">
-                Update List
-            </button>
-        </div>
-
-    </form>
-</div>
-
-<form style="margin-top: 16px" action="/projects" method="POST">
-    <label class="label">
-        <h1 class="title"><strong>New Project:</strong></h1>
-    </label>
-    <textarea style="color: #2a2a2d" name="project" value="" class="textarea" placeholder="e.g. Hello world"></textarea>
-
-    <div style="margin: 1rem 1rem 0 0" class="columns">
-        <div class="column is-narrow">
-            <div class="field">
-                <button color="#2a2a2d" type="Submit" id="radButton" class="button is-outlined">
-                    Create Project
+<section class="section background-grey">
+    <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+      <ul>
+        <li><a href="/">Login</a></li>
+        <li class="is-active"><a href="/projects" aria-current="page">Projects</a></li>
+        <li><a href="/todo">Tasks</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+        <div class="columns is-desktop">
+          <div class="column">
+            <h1 class="title">Empower Your Dev Team</h1>
+            <h2 class="subtitle">
+              A brief description of TASKWORK, how to use it etc!
+            </h2>
+          </div>
+          <div class="column">
+            <form action="/projects" method="POST">
+                <label class="label">
+                    <h1 class="title">Create New Project</h1>
+                </label>
+                <textarea name="project" value="" class="textarea grey" placeholder="e.g. Hello world"></textarea>
+                <button type="Submit" id="radButton" class="button is-grey">
+                      Post Project
                 </button>
-            </div>
+            </form>
+          </div>
         </div>
-        <div class="column is-narrow">
-            <a href="/users/logout" class="button is-danger">Logout</a>
-            <a href="/todo">Go to todos</a>
+      </div>
+</section>
+
+<section class="section">
+    <div class="columns is-desktop">
+        <div class="column">
+            <form action="/complete" method="POST">
+                <div class="box">
+                    <div class="heading">Projects</div>
+                    <!-- ${data.map(rev => { return `
+                    <div class="subtitle has-text-centered">${rev.todo_task}
+                    ${rev.todo_task != ''? `
+                      <span class="control">
+                          <div class="buttons has-addons is-centered">
+                              <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
+                                  <span>Delete</span>
+                              </button>
+                              <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Progress">
+                                <span>Progress</span>
+                              </button>
+                            </div>
+                      </span>
+                    ` : `
+                    `}</div>
+                    ` }).join('')}
+                    <br> -->
+                </div>
+            </form>
+        </div>
+
+        <div class="column">
+            <form action="/complete" method="POST">
+                <div class="box">
+                    <div class="heading">TBD (under review or ready)</div>
+                    <!-- ${data.map(rev => { return `
+                    <div class="subtitle has-text-centered">${rev.todo_task}
+                    ${rev.todo_task != ''? `
+                      <span class="control">
+                          <div class="buttons has-addons is-centered">
+                              <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
+                                  <span>Delete</span>
+                              </button>
+                              <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Progress">
+                                <span>Progress</span>
+                              </button>
+                            </div>
+                      </span>
+                    ` : `
+                    `}</div>
+                    ` }).join('')}
+                    <br> -->
+                </div>
+            </form>
         </div>
     </div>
-</form>
+</section>        
+
+<section class="hero">
+    <div class="hero-body has-text-centered">
+        <a href="/users/logout" class="button is-primary">Logout</a>
+    </div>
+</section>

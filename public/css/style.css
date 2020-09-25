@@ -6,8 +6,6 @@
 /* Pink: #e7807c */
 /* Soft Grey: #ecedf8 */
 
-/* Login and Sign Up Screen CSS */
-
 * {
     font-family: 'Nunito Sans', sans-serif;
 }
@@ -59,14 +57,14 @@ input {
     background: var(--shadowDark) !important;
 }
 
-.input, .select select, .textarea {
+.input, .select select {
     background-color: transparent;
     border-color: transparent;
     border-radius: 4px;
     color: #fff;
 }
 
-.input:active, .input:focus, .is-active.input, .is-active.textarea, .is-focused.input, .is-focused.textarea, .select select.is-active, .select select.is-focused, .select select:active, .select select:focus, .textarea:active, .textarea:focus {
+.input:active, .input:focus, .is-active.input, .is-focused.input, .select select.is-active, .select select.is-focused, .select select:active, .select select:focus {
     border-color: #2560e3;
     box-shadow: none;
 }
@@ -102,9 +100,59 @@ input {
 /* To-Do Route CSS: Alphabetized from here down */
 
 .background-grey {
-    background: #ecedf8;
+    background: #FBFBFE;
+}
+
+.breadcrumb a {
+    align-items: center;
+    color: #2560e3;
+}
+
+.button {
+    background-color: #fff;
+    border-color: #dbdbdb;
+    border-width: 1px;
+    color: #363636;
+    margin-top: .75rem;
+}
+
+.button.is-grey {
+    background-color: #ecedf8;
+    border-color: transparent;
+    color: #363636;
+}
+
+.button.is-grey:hover {
+    background-color: #E7807C;
+    border-color: transparent;
+    color: #fff;
 }
 
 .section {
     padding: 2rem 1.5rem;
+}
+
+.subtitle {
+    color: #4a4a4a;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.textarea.grey {
+    background-color: #ecedf8;
+    border-color: #ecedf8;
+    border-radius: 4px;
+    color:#363636;
+    box-shadow: none;
+}
+
+.textarea.grey:hover {
+    border-color: none !important;
+    box-shadow: none;
+}
+
+.textarea.grey:active {
+    border-color: none !important;
+    box-shadow: none;
 }
