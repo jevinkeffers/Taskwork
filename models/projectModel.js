@@ -27,6 +27,28 @@ class projectModel {
             return error.message;
         }
     }
+
+    static async currentProjectNumber(projectID){
+        
+        try{
+            const response = await db.result(`UPDATE currentproject SET current_project_num = $1 WHERE id =1`,[projectID]);        
+            return response;
+        } catch (error){
+            return error.message;
+        }
+    }
+    static async getprojectID(){
+        
+        try{
+            const response = await db.one(`SELECT current_project_num FROM currentproject WHERE id =1;`);        
+            return response;
+        } catch (error){
+            return error.message;
+        }
+    }
+    
+
+
 }
 
 
