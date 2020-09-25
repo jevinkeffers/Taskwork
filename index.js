@@ -78,18 +78,17 @@ app.use('/users',users);
 const todo = require('./routes/todo');
 app.use('/todo',todo);
 
+const howto = require('./routes/howto');
+app.use('/howto',howto);
+
 const complete = require('./routes/complete');
 app.use('/complete',complete);
-
 
 const complete_inprogress = require('./routes/complete_inprogress');
 app.use('/complete_inprogress',complete_inprogress);
 
-
-
 const complete_complete = require('./routes/complete_complete');
 app.use('/complete_complete',complete_complete);
-
 
 const in_testing = require('./routes/in_testing');
 app.use('/in_testing',in_testing);
