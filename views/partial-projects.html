@@ -47,16 +47,16 @@
                         ${data.map(rev => { return `
                         ${rev.name != ''? `
                         <button type="Submit" name="Project_id" value="${rev.id}" id="updateTodo" class="button is-outlined">${rev.name}</button>
-                          <span class="control">
-                              <div class="buttons has-addons is-centered">
-                                  <button type="Submit" id="" class="button is-small" value="" name="Review" >
-                                      <span>Move to Review</span>
-                                  </button>
-                                  <button type="Submit" id="" class="button is-small" value="" name="Complete">
+                        <span class="control">
+                            <div class="buttons has-addons is-centered">
+                                <button type="Submit" id="" class="button is-small" value="" name="Review" >
+                                    <span>Move to Review</span>
+                                </button>
+                                <button type="Submit" id="" class="button is-small" value="" name="Complete">
                                     <span>Complete and Delete</span>
-                                  </button>
+                                </button>
                                 </div>
-                          </span>
+                        </span>
                         ` : `
                         `}
                         ` }).join('')}
@@ -65,8 +65,7 @@
                 </form>
             </div>
         </div>
-    </section> 
-    
+    </section>   
 
     <section class="footer has-text-centered">
             <a href="/users/logout" class="button is-primary">Logout</a>

@@ -46,6 +46,16 @@ class projectModel {
             return error.message;
         }
     }
+
+    static async deleteProject(id){
+        
+        try{
+            const response = await db.one(`DELETE FROM projects WHERE id =$1;`, [id]);        
+            return response;
+        } catch (error){
+            return error.message;
+        }
+    }
     
 
 
