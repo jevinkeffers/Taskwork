@@ -17,8 +17,11 @@ router.post("/", async(request,response) => {
     // // Defining keys from the request body
     const entryDelete = request.body.Delete;
     const entryBack = request.body.Back;
+    const review = request.body.review;
     let projectIDdata = await projectIDModel.getprojectID();
     let projectID = projectIDdata.current_project_num;
+    let current_user_id = await projectIDModel.getuserID();
+    let userid = current_user_id.current_userid;
     // const entryProgress = request.body.Progress;
 
     //This is how we will decide what to do when the form is submitted from todolist view
@@ -27,15 +30,19 @@ router.post("/", async(request,response) => {
         console.log("we will delete id: ",entryDelete)
         const taskID = entryDelete;
         let todoModelData = await todoModel.deleteOne(taskID, projectID);
-    }else{
+    }
+    if(entryBack != undefined){
         // we will use this for going back a spot
         console.log("we will back id: ",entryBack)
         const taskID = entryBack;
         todoModelData = await todoModel.backOne_complete(taskID, projectID);
+        response.redirect("/todo")
     }
-    
-    
-    response.redirect("/todo")
+    if(review == 'true'){
+        todoModelData = await projectIDModel.markReview(userid,projectID);
+        response.redirect("/projects")
+    }
+    // response.redirect("/todo")
     //  response.status(200).send("OK").end();
     
 })

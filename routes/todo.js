@@ -15,10 +15,12 @@ const projectIDModel = require('../models/projectModel');
 router.get("/",async (request,response)=>{
     const userid = request.session.user_id; 
     let projectIDdata = await projectIDModel.getprojectID();
-    let projectID = projectIDdata.current_project_num;
+    let projectID = await projectIDdata.current_project_num;
     console.log("User ID >>>>>", userid)
     let todoModelData = await todoModel.getAll(userid, projectID);
-    console.log("User ID >>>>>", userid)
+    console.log("User ID >>>>>",userid)
+    let projectName = await todoModel.getProjectName(userid, projectID);
+    console.log(projectName);
     //Filtering through data recieved from the model to remove null from rendering in the view
     for(let i = 0;i<todoModelData.length;i++){
         if (todoModelData[i].todo_task == null){
@@ -40,6 +42,7 @@ router.get("/",async (request,response)=>{
         locals: {
             title: "To Do",
             data: todoModelData,
+            projectName: projectName,
             is_logged_in: request.session.is_logged_in
         },
         //This is the actual view

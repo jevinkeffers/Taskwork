@@ -16,7 +16,7 @@
   <div class="container">
     <div class="columns is-desktop">
       <div class="column">
-        <h1 class="title">Project Name</h1>
+        <h1 class="title">${projectName.name}</h1>
         <h2 class="subtitle">
           A brief description of the project!
         </h2>
@@ -151,6 +151,13 @@
 <span>Delete Project</span>
 </button>
 </form>
+
+<form action="/complete_complete" method="POST">
+  <button type="Submit" id="updateTodo" class="button is-small" value="true" name="review">
+    <span>Mark For Review</span>
+  </button>
+</form>
+
 
 
 <section class="hero">

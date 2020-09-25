@@ -41,6 +41,7 @@ router.post("/", async(request,response) => {
     const project_id = request.body.Project_id;
     console.log("This is the project id from the form: ",project_id )
     await projectModel.currentProjectNumber(project_id)
+    await projectModel.currentuserID(userid);
 
 
 
