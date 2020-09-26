@@ -25,13 +25,7 @@
     color: #fff !important;
 }
 
-.hero {
-    background: var(--background);
-    background-image: url(./images/loginBackgroundLight.png);
-}
-
 header {
     background-color: #002364;
-
 }
 

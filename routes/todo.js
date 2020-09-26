@@ -36,7 +36,6 @@ router.get("/",async (request,response)=>{
             todoModelData[i].completed = '';
         }
     }
-  
 
     response.render("template",{
         locals: {

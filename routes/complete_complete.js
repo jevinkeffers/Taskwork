@@ -7,13 +7,12 @@ const todoModel = require('../models/todoModel');
 const projectIDModel = require('../models/projectModel');
 
 router.get("/",async (request,response)=>{
-  
     // response.status(200).send("OK").end();
 })
 
 router.post("/", async(request,response) => {
     
-     console.log("request body from the todolist  --> ", request.body)
+    console.log("request body from the todolist  --> ", request.body)
     // // Defining keys from the request body
     const entryDelete = request.body.Delete;
     const entryBack = request.body.Back;

@@ -14,7 +14,7 @@ const morgan = require("morgan");
 const logger = morgan("tiny");
 const helmet = require("helmet");
 const session = require("express-session");
-const FileStore = require("session-file-store")(session);
+// const FileStore = require("session-file-store")(session);
 const cookieParser = require("cookie-parser");
 
 //ES6 renderer import
@@ -42,7 +42,6 @@ app.use(
         resave: false,
         saveUninitialized: true,
         is_logged_in: false
-
     })
 )
 
@@ -65,7 +64,7 @@ server.listen(port,hostname,() =>{
 // app.use(express.static(__dirname + 'public')); //Serves resources from public folder
 app.use(express.urlencoded({
     extended: true
-  }))
+}))
 
 
 //This is how you use the controllers
