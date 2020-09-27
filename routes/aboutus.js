@@ -1,14 +1,17 @@
+//For every single route file we need these two lines
 const express = require("express");
 const router = express.Router();
-// const bcrypt = require("bcryptjs");
 
-router.get("/aboutus",async (request,response)=>{
+
+//The slash always references the file that it is in
+router.get("/",async (request,response)=>{
 
         response.render("template",{
             locals: {
-                title: "About Us",
-                is_logged_in: request.session.is_logged_in
+                title: "About Us"
+
             },
+            //This is the actual view
             partials:{
                 partial:"partial-aboutus"
             }
@@ -17,4 +20,5 @@ router.get("/aboutus",async (request,response)=>{
        //response.status(200).send("OK").end();
 });
 
+//exporting out of the router
 module.exports = router;

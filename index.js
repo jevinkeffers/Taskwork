@@ -97,3 +97,6 @@ app.use('/projects',projects);
 
 const deleteProject = require('./routes/deleteproject');
 app.use('/deleteproject', deleteProject);
+
+const aboutUs = require('./routes/aboutus');
+app.use('/aboutus', aboutUs);

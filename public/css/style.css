@@ -82,6 +82,10 @@ input {
     box-shadow: none;
 }
 
+.github {
+    line-height: 50px;
+}
+
 .label {
     color: #00d1b2;
     display: block;
@@ -200,6 +204,7 @@ button.subtitle:focus {
 }
 
 .footer {
+    color: #FBFBFE;
     background-color: transparent;
     padding: 1.5rem;
 }
