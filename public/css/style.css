@@ -15,18 +15,22 @@ body {
     background-image: url(../images/loginBackgroundLight.png);
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+/* Chrome/Opera/Safari */
+/* ::-webkit-input-placeholder {
     color: #fff !important;
-}
-::-moz-placeholder { /* Firefox 19+ */
+} */
+/* Firefox 19+ */
+/* ::-moz-placeholder {
     color: #fff !important;
-}
-:-ms-input-placeholder { /* IE 10+ */
+} */
+/* IE 10+ */
+/* :-ms-input-placeholder { 
     color: #fff !important;
-}
-:-moz-placeholder { /* Firefox 18- */
+} */
+/* Firefox 18- */
+/* :-moz-placeholder { 
     color: #fff !important;
-}
+} */
 
 /* Login and Sign Up Screen CSS: Alphabetized from here down */
 
@@ -58,12 +62,8 @@ body {
     justify-content: center;
 }
 
-input {
+.input {
     background: var(--shadowDark) !important;
-}
-
-.input, .select select {
-    background-color: transparent;
     border-color: transparent;
     border-radius: 4px;
     color: #fff;
@@ -72,6 +72,10 @@ input {
 .input:active, .input:focus, .is-active.input, .is-focused.input, .select select.is-active, .select select.is-focused, .select select:active, .select select:focus {
     border-color: #2560e3;
     box-shadow: none;
+}
+
+.input.white::placeholder {
+    color: #fff !important;
 }
 
 .is-danger.input, .is-danger.textarea {
@@ -161,6 +165,23 @@ button.subtitle:focus {
     outline: none;
 }
 
+.input.project {
+    background: #ecedf8 !important;
+    border-color: #ecedf8;
+    border-radius: 4px;
+    color: #363636;
+    margin-bottom: 10px;
+}
+
+.input.project:active, .input.project:focus, .is-active.input, .is-focused.input {
+    border-color: #2560e3;
+    box-shadow: none;
+}
+
+.input.text::placeholder {
+    color: #363636 !important;
+}
+
 .section {
     padding: 2rem 1.5rem;
 }
@@ -177,6 +198,10 @@ button.subtitle:focus {
     margin-bottom: 1rem;
 }
 
+.textarea.text::placeholder {
+    color: #363636 !important;
+}
+
 .textarea.grey {
     background-color: #ecedf8;
     border-color: #ecedf8;
@@ -185,17 +210,13 @@ button.subtitle:focus {
     box-shadow: none;
 }
 
-/* .textarea.grey:placeholder-shown {
-    color:#363636 !important;
-} */
-
 .textarea.grey:hover {
     border-color: none !important;
     box-shadow: none;
 }
 
-.textarea.grey:active {
-    border-color: none !important;
+.textarea.grey:active, .textarea:focus, .is-active.textarea.grey, .is-focused.textarea.grey {
+    border-color: #2560e3;
     box-shadow: none;
 }
 

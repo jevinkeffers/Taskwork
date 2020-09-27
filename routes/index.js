@@ -9,7 +9,7 @@ router.get("/",async (request,response)=>{
 
         response.render("template",{
             locals: {
-                title: "Login"
+                title: "Login",
 
             },
             //This is the actual view

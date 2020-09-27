@@ -62,11 +62,9 @@ server.listen(port,hostname,() =>{
     console.log(`Server Running at http://${hostname}:${port}`)
 });
 
-// app.use(express.static(__dirname + 'public')); //Serves resources from public folder
 app.use(express.urlencoded({
     extended: true
-  }))
-
+}))
 
 //This is how you use the controllers
 const rootController = require('./routes/index');
