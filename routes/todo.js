@@ -3,14 +3,9 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 
-
-
-
 // bringing in data from each model
 const todoModel = require('../models/todoModel');
 const projectIDModel = require('../models/projectModel');
-
-
 
 router.get("/",async (request,response)=>{
     const userid = request.session.user_id; 
@@ -20,7 +15,8 @@ router.get("/",async (request,response)=>{
     let todoModelData = await todoModel.getAll(userid, projectID);
     console.log("User ID >>>>>",userid)
     let projectName = await todoModel.getProjectName(userid, projectID);
-    console.log(projectName);
+    let projectDescription = await todoModel.getProjectDescription(userid, projectID);
+    console.log(projectDescription);
     //Filtering through data recieved from the model to remove null from rendering in the view
     for(let i = 0;i<todoModelData.length;i++){
         if (todoModelData[i].todo_task == null){
@@ -37,12 +33,12 @@ router.get("/",async (request,response)=>{
         }
     }
   
-
     response.render("template",{
         locals: {
             title: "To Do",
             data: todoModelData,
             projectName: projectName,
+            projectDescription: projectDescription,
             is_logged_in: request.session.is_logged_in
         },
         //This is the actual view
@@ -82,7 +78,6 @@ router.post("/", async(request,response) => {
     //     }
     // })
 })
-
 
 //exporting out of the router
 module.exports = router;
