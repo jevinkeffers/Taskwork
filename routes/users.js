@@ -28,7 +28,6 @@ router.get("/signup",async (request,response)=>{
             title: "New User Sign Up",
             is_logged_in: request.session.is_logged_in
             
-           
         },
         //This is the actual view
         partials:{
@@ -38,7 +37,6 @@ router.get("/signup",async (request,response)=>{
     })
     // response.status(200).send("OK").end();
 })
-
 
 router.post("/signup", async(request,response)=>{
     // console.log(request.body);

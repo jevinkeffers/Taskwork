@@ -14,7 +14,7 @@ const morgan = require("morgan");
 const logger = morgan("tiny");
 const helmet = require("helmet");
 const session = require("express-session");
-const FileStore = require("session-file-store")(session);
+// const FileStore = require("session-file-store")(session);
 const cookieParser = require("cookie-parser");
 
 //ES6 renderer import
@@ -42,7 +42,6 @@ app.use(
         resave: false,
         saveUninitialized: true,
         is_logged_in: false
-
     })
 )
 
@@ -96,3 +95,6 @@ app.use('/projects',projects);
 
 const deleteProject = require('./routes/deleteproject');
 app.use('/deleteproject', deleteProject);
+
+const aboutUs = require('./routes/aboutus');
+app.use('/aboutus', aboutUs);
