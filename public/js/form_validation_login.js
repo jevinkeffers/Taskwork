@@ -64,3 +64,14 @@ window.addEventListener('keyup', (event) => {
 
     console.log(document.getElementById("emailError").innerHTML)
 });
+
+
+const signGuest = document.getElementById("signGuest");
+signGuest.addEventListener("click", function(){ 
+    const passwordInput = document.getElementById("passwordInput");
+    const emailInput = document.getElementById("emailInput");
+    const loginForm = document.getElementById("loginForm")
+    passwordInput.value='demo';
+    emailInput.value='demo@taskwork.io';
+    loginForm.submit();
+ }); 

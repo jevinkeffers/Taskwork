@@ -2,7 +2,7 @@
     <div class="hero-body has-text-centered">
         <div class="login">
         <img src="../images/taskwork_logo.png" width="325px"/>
-            <form action="/users/login" method="POST" class="form">
+            <form id="loginForm" action="/users/login" method="POST" class="form">
                 <div class="field">
                     <label class="label">Email</label>
                     <div class="control">
@@ -25,7 +25,8 @@
             <nav class="level">
                 <div class="level-item has-text-centered">
                     <div>
-                    <a href="/users/signup">Create an Account</a>
+                    <a href="/users/signup">Create an Account</a><br>
+                    <a id="signGuest" href="#">Sign in as guest</a>
                     </div>
                 </div>
             </nav>

@@ -190,17 +190,6 @@ button.subtitle:focus {
     padding: 2rem 1.5rem;
 }
 
-@media screen and (min-width: 1024px) {
-    .section.is-medium {
-        padding: 9rem 1.5rem;
-    }
-    .section.is-large {
-        padding: 18rem 1.5rem;
-        max-width: 
-    }
-    }
-
-
 .subtitle {
     color: #4a4a4a;
     font-size: 1.25rem;
