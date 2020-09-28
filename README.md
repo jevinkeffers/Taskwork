@@ -22,7 +22,6 @@ There are two primary pages two navigate Taskwork. At first, the project page is
 ​
 ## Installation
 
-## API Reference
 
 ​
 ## Credits
