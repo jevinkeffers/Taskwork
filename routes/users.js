@@ -73,7 +73,8 @@ router.post("/login", async(request,response)=>{
             request.session.user_id = user_id;
             response.redirect("/projects")
         }else{
-            response.sendStatus(401);
+            response.redirect("/unauthorized")
+            //response.sendStatus(401);
         }
     })
     // response.status(200).send("OK").end();

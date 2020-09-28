@@ -1,5 +1,7 @@
 "use strict";
+// Linking database from Conn.js
 const db = require("./conn");
+// Linking bcrypt password encryption Express Module
 const bcrypt = require("bcryptjs");
 
 
@@ -9,6 +11,7 @@ class projectModel {
         this.name = name;
         this.project = project;
     }
+    // Get all projects from our Database
     static async getAll(id){
         try{
             const response = await db.any(`SELECT * FROM projects WHERE users_id = $1;`,[id]);
@@ -17,6 +20,7 @@ class projectModel {
             return error.message;
         }
     }
+    // Submit Project to Database from the Partial Form
     static async submitProject(id,projectName, projectDescription){
         
         try{
@@ -27,7 +31,7 @@ class projectModel {
             return error.message;
         }
     }
-
+    // Updating Database table with Project that was clicked on
     static async currentProjectNumber(projectID){
         
         try{
@@ -37,6 +41,7 @@ class projectModel {
             return error.message;
         }
     }
+    // Select current project from current project table
     static async getprojectID(){
         
         try{
@@ -46,7 +51,7 @@ class projectModel {
             return error.message;
         }
     }
-
+    // Delete project from database
     static async deleteProject(id){
         
         try{
@@ -56,6 +61,7 @@ class projectModel {
             return error.message;
         }
     }
+    // Updating current user that is logged in inside the current project table
     static async currentuserID(userID){
         
         try{
@@ -65,6 +71,7 @@ class projectModel {
             return error.message;
         }
     }
+    // Select current User ID from the currenct project table
     static async getuserID(){
         
         try{
@@ -74,6 +81,7 @@ class projectModel {
             return error.message;
         }
     }
+    // Update project to in review
     static async  markReview(id, projectID) {
         try {
             let response = await db.result(`UPDATE projects SET is_complete = true WHERE users_id =$1 and id = $2;`,[id, projectID]); 
@@ -85,7 +93,7 @@ class projectModel {
             return error.message;
         }
     }
-   
+//    Update project to complete
     static async  markApproved(id, projectID) {
         try {
             let response = await db.result(`UPDATE projects SET is_approved = true WHERE users_id =$1 and id = $2;`,[id, projectID]); 
