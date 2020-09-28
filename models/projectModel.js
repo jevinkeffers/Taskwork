@@ -85,7 +85,7 @@ class projectModel {
     static async  markReview(id, projectID) {
         try {
             let response = await db.result(`UPDATE projects SET is_complete = true WHERE users_id =$1 and id = $2;`,[id, projectID]); 
-            
+            response = await db.result(`UPDATE projects SET is_approved = false WHERE users_id =$1 and id = $2;`,[id, projectID]);    
             return response;
         }
         catch (error) {
@@ -104,6 +104,7 @@ class projectModel {
             return error.message;
         }
     }
+
     
 
 

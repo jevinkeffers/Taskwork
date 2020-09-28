@@ -66,6 +66,7 @@
                         ${data.map(rev => { return `
                         ${rev.is_complete == true && rev.is_approved == false  ? `
                         <button type="Submit" name="Project_id" value="${rev.id}" id="updateTodo" class="subtitle has-text-centered">${rev.name}</button>
+                        <p>${rev.project_description}</p>
                         ` : `
                         `}
                         ` }).join('')}
@@ -80,6 +81,7 @@
                         ${data.map(rev => { return `
                         ${rev.is_approved == true ? `
                         <button type="Submit" name="Project_id" value="${rev.id}" id="updateTodo" class="subtitle has-text-centered">${rev.name}</button></a>
+                        <p>${rev.project_description}</p>
                         ` : `
                         `}
                         ` }).join('')}
