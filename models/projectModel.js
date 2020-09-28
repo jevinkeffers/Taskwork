@@ -17,11 +17,11 @@ class projectModel {
             return error.message;
         }
     }
-    static async submitProject(id,project){
+    static async submitProject(id,projectName, projectDescription){
         
         try{
-            const response = await db.result(`INSERT INTO projects (users_id,name)
-            VALUES ($1,$2);`,[id,project]);        
+            const response = await db.result(`INSERT INTO projects (users_id,name,project_description)
+            VALUES ($1,$2, $3);`,[id,projectName, projectDescription]);        
             return response;
         } catch (error){
             return error.message;
