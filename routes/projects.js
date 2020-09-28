@@ -45,9 +45,6 @@ router.post("/", async(request,response) => {
     await projectModel.currentProjectNumber(project_id)
     await projectModel.currentuserID(userid);
 
-
-
-    
     await projectModel.submitProject(userid,project);
     projectData = await projectModel.getAll(userid);
     
