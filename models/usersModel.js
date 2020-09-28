@@ -1,8 +1,10 @@
 "use strict";
+// Link to databse
 const db = require("./conn");
+// Linking bcrypt password encryption Express Module
 const bcrypt = require("bcryptjs");
 
-
+// Class constructor for individual user
 class UserModel {
     constructor(id,name, email, password){
         this.id = id;
