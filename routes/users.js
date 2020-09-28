@@ -52,7 +52,6 @@ router.post("/signup", async(request,response)=>{
     const userInstance = new UsersModel(null, name, email, hash);
     // note the res in the changed then is different from the router (vimp)
     userInstance.save().then(res => {
-        console.log("response: ",res);
         if (res.id !== undefined){
             response.redirect('/users/login')
         }else {
@@ -66,12 +65,9 @@ router.post("/signup", async(request,response)=>{
 
 router.post("/login", async(request,response)=>{
     const {email, password} = request.body;
-    console.log("Post request:", request.body);
     const userInstance = new UsersModel(null,null, email, password);
     userInstance.login().then(res => {
-        console.log("response is", res);
         request.session.is_logged_in = res.isValid;
-        console.log(request.session.is_logged_in);
         if(!!res.isValid){
             const {name, user_id} = res;
             request.session.name = name; 
