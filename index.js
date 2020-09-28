@@ -9,7 +9,7 @@ const port = 4444;
 // Brings in all the stuff that power Express
 const express = require("express");
 
-//Bring in addl middleware
+//Bring in middleware
 const morgan = require("morgan");
 const logger = morgan("tiny");
 const helmet = require("helmet");
@@ -95,3 +95,7 @@ app.use('/deleteproject', deleteProject);
 
 const aboutTaskwork = require('./routes/about');
 app.use('/about', aboutTaskwork);
+
+const unauthorized = require('./routes/unauthorized');
+app.use('/unauthorized', unauthorized);
+
