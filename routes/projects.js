@@ -7,7 +7,6 @@ const bcrypt = require("bcryptjs");
 const projectModel = require('../models/projectModel');
 
 
-
 router.get("/",async (request,response)=>{
     const userid = request.session.user_id; 
     let projectData = await projectModel.getAll(userid);
@@ -18,8 +17,6 @@ router.get("/",async (request,response)=>{
             projectData[i].name = '';
         }
     }
-  
-
     response.render("template",{
         locals: {
             title: "Project",
@@ -37,34 +34,18 @@ router.get("/",async (request,response)=>{
 
 router.post("/", async(request,response) => {
     const userid = request.session.user_id; 
-    const project = request.body.project;
-    console.log(project)
-
+    const projectName = request.body.projectTitle;
+    const projectDescription = request.body.projectDesc;
     const project_id = request.body.Project_id;
-    console.log("This is the project id from the form: ",project_id )
+    //console.log("This is the project id from the form: ",project_id )
+    
     await projectModel.currentProjectNumber(project_id)
     await projectModel.currentuserID(userid);
-
-
-
-    
-    await projectModel.submitProject(userid,project);
+    await projectModel.submitProject(userid,projectName,projectDescription);
     projectData = await projectModel.getAll(userid);
     
-    // response.render("template",{
-    //     locals: {
-    //         title: "To Do",
-    //         data: projectData,
-    //         is_logged_in: request.session.is_logged_in
-    //     },
-    //     //This is the actual view
-    //     partials:{
-    //         partial:"partial-todolist"
-            
-    //     }
-    // })
-    
-    if(project == undefined){
+    //response.redirect("/projects")
+    if(projectName == undefined){
         response.redirect("/todo")
     }else{
         response.redirect("/projects")
