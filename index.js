@@ -41,7 +41,10 @@ app.use(
         secret: "awesome",
         resave: false,
         saveUninitialized: true,
-        is_logged_in: false
+        is_logged_in: false,
+        cookie: {
+            maxAge: 1*60*60*1000,
+        }
     })
 )
 

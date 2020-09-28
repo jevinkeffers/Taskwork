@@ -14,7 +14,7 @@ After logging in, users create projects on the Project Page where they can add d
 ## Installation
 
 ## Credits
-**Project Manager and Design**
+**Project Manager, Frontend Development and Design**
 Harmony Trevena
 [GitHub](https://github.com/harmonytrevena)
 
