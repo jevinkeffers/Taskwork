@@ -9,7 +9,6 @@ router.get("/",async (request,response)=>{
         response.render("template",{
             locals: {
                 title: "How To"
-
             },
             //This is the actual view
             partials:{

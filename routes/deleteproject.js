@@ -18,7 +18,7 @@ router.post("/", async(request,response) => {
     // Defining keys from the request body
     let projectIDdata = await projectIDModel.getprojectID();
     let projectID = projectIDdata.current_project_num;
-    // console.log("request body from the todolist  --> ", entryBack)
+   
 
     await projectModel.deleteProject(projectID);
     
