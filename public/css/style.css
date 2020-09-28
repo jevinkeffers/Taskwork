@@ -186,6 +186,10 @@ button.subtitle:focus {
     color: #363636 !important;
 }
 
+p {
+    padding: 1px 6px;
+}
+
 .section {
     padding: 2rem 1.5rem;
 }
