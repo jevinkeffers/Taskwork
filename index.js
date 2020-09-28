@@ -98,3 +98,7 @@ app.use('/deleteproject', deleteProject);
 
 const aboutUs = require('./routes/aboutus');
 app.use('/aboutus', aboutUs);
+
+const unauthorized = require('./routes/unauthorized');
+app.use('/unauthorized', unauthorized);
+
