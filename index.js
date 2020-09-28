@@ -75,9 +75,6 @@ app.use('/users',users);
 const todo = require('./routes/todo');
 app.use('/todo',todo);
 
-const howto = require('./routes/howto');
-app.use('/howto',howto);
-
 const complete = require('./routes/complete');
 app.use('/complete',complete);
 
@@ -96,5 +93,5 @@ app.use('/projects',projects);
 const deleteProject = require('./routes/deleteproject');
 app.use('/deleteproject', deleteProject);
 
-const aboutUs = require('./routes/aboutus');
-app.use('/aboutus', aboutUs);
+const aboutTaskwork = require('./routes/about');
+app.use('/about', aboutTaskwork);

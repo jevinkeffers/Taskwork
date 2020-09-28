@@ -8,12 +8,12 @@ router.get("/",async (request,response)=>{
 
         response.render("template",{
             locals: {
-                title: "About Us"
+                title: "About Taskwork"
 
             },
             //This is the actual view
             partials:{
-                partial:"partial-aboutus"
+                partial:"partial-about"
             }
         })
 
