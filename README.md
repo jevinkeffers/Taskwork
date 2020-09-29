@@ -1,6 +1,6 @@
 # Taskwork
 ## Description
-A streamlined project management tool that utilizes the scrum framework, allowing users to track project tasks, review those in flight and boost team efficiency.
+A user-friendly project management tool that utilizes the scrum framework, allowing users to track project tasks, review those in flight and boost team efficiency.
 
 ## Motivation
 The primary driver behind Taskwork is to deliver a project-management tool with a relatively low barrier to entry. Taskwork is designed to be easy to navigate with special attention given to a fluid UI/UX experience. In addition, a completly responsive, mobile-first design allows users to track projects on the go.
