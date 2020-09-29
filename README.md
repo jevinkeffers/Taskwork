@@ -10,12 +10,12 @@ After logging in, users create projects on the Project Page where they can add d
 
 ## Challenges and Solutions
 
-**Pulling Data from Multiple Tables
+Pulling Data from Multiple Tables
 
     - Challenge: Taking the data that is stored in multiple tables and outputing them to the screen.
     - Solution: Creating static async/await class methods that were called inside our routes to output.
 <br>
-**Trying to Store User ID and Project ID across multiple pages
+Trying to Store User ID and Project ID across multiple pages
 
     - Challenge: Trying to access user ID and project ID across multiple pages.
     - Solution: Creating database tables that store the ID's based on the user ID and methods to call for that information. 
