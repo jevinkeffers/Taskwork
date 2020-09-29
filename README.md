@@ -1,4 +1,4 @@
-<img src="../images/taskwork_logo.png">
+<img src="/public/images/taskwork_logo.png">
 <br>
 ## Description
 A user-friendly project management tool that utilizes the scrum framework, allowing users to track project tasks, review those in flight and boost team efficiency.
