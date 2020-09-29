@@ -22,7 +22,6 @@ Trying to Store User ID and Project ID across multiple pages
     - Solution: Creating database tables that store the ID's based on the user ID and methods to call for that information. 
 
 ## Demo
-## Demo
 <h4> Preview of user navigating signup and login screen. </h4>
 <img src="/public/video/SignUpLogin.gif">
 <br>
