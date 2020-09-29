@@ -49,9 +49,6 @@
                         <div class="heading">Projects</div>
                         ${data.map(rev => { return `
                         ${rev.name != '' && rev.is_complete == false && rev.is_approved == false  ? `
-                        <button type="Submit" name="Project_id" value="${rev.id}" id="updateTodo" class="subtitle has-text-centered">${rev.name}</button>
-                        <p>${rev.project_description}</p>
-                        ` : `
                         `}
                         ` }).join('')}
                         <br>
