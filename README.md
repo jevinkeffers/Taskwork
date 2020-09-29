@@ -9,6 +9,15 @@ The primary driver behind Taskwork is to deliver a project-management tool with 
 After logging in, users create projects on the Project Page where they can add descriptions and track the overall status of the project. Each project is linked to its own task page, where users can add tasks, advance tasks through different statuses of completion: To Do, In Progress, In Testing and Complete, from where users can move the projects to new states for another team to review the project. Once the In Review team is happy, the project can be moved to Complete once all project requirements have been met and approved.
 
 ## Challenges and Solutions
+
+Pulling Data from Multiple Tables
+    - Challenge: Taking the data that is stored in multiple tables and outputing them to the screen.
+    - Solution: Creating static async/await class methods that were called inside our routes to output.
+Trying to Store User ID and Project ID across multiple pages
+    - Challenge: Trying to access user ID and project ID across multiple pages.
+    - Solution: Creating database tables that store the ID's based on the user ID and methods to call for that information. 
+
+
 ## Screenshots
 ## Features
 
