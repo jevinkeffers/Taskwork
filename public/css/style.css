@@ -127,6 +127,11 @@ body {
     border-radius: 0px 0px 4px 4px;
 }
 
+.background-white-cornerless {
+    background: #ffffff;
+    border-radius: 0px;
+}
+
 .breadcrumb a {
     align-items: center;
     color: #2560e3;
