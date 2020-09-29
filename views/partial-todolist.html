@@ -123,7 +123,7 @@
           </div>
 
           <div class="column">
-              <form action="/complete_complete" method="POST"
+              <form action="/complete_complete" method="POST">
                   <div class="box">
                       <div class="heading">Complete</div>
                       ${data.map(rev => { return `
@@ -135,7 +135,7 @@
                             <span style="color: #2560e3;"><i class="fad fa-angle-double-left fa-lg"></i></span>
                           </button>
                           <button type="Submit" id="updateTodo" class="button is-small" value="${rev.id}" name="Delete" >
-                            <span style="color: #E7807C;"><i class="fas fa-times fa-lg""></i></span>
+                            <span style="color: #E7807C;"><i class="fas fa-times fa-lg"></i></span>
                           </button>
                         </div>
                       </span>
@@ -156,16 +156,16 @@
                   </div>
               </form>
           </div>
-          <form action="/deleteproject" method="POST">
-            <span class="control">
-              <div class="buttons is-centered">
-                <button type="Submit" id="updateTodo" class="button is-grey" value="" name="Delete" >
-                  <span>Permanently Delete Project</span>
-                </button>
-              </div>
-            </span>
-          </form>
       </div>
+      <form action="/deleteproject" method="POST">
+        <span class="control">
+          <div class="buttons is-centered">
+            <button type="Submit" id="updateTodo" class="button is-grey" value="" name="Delete" >
+              <span>Permanently Delete Project</span>
+            </button>
+          </div>
+        </span>
+      </form>
   </section>
   
   <section class="footer has-text-centered">

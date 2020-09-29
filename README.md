@@ -3,7 +3,7 @@
 A user-friendly project management tool that utilizes the scrum framework, allowing users to track project tasks, review those in flight and boost team efficiency.
 
 ## Motivation
-The primary driver behind Taskwork is to deliver a project-management tool with a relatively low barrier to entry. Taskwork is designed to be easy to navigate with special attention given to a fluid UI/UX experience. In addition, a completly responsive, mobile-first design allows users to track projects on the go.
+The primary driver behind Taskwork is to deliver a project-management tool with a relatively low barrier to entry. Taskwork is designed to be easy to navigate with special attention given to a fluid UI/UX experience. In addition, a completely responsive, mobile-first design allows users to track projects on the go.
 
 ## How to use
 After logging in, users create projects on the Project Page where they can add descriptions and track the overall status of the project. Each project is linked to its own task page, where users can add tasks, advance tasks through different statuses of completion: To Do, In Progress, In Testing and Complete, from where users can move the projects to new states for another team to review the project. Once the In Review team is happy, the project can be moved to Complete once all project requirements have been met and approved.
@@ -12,7 +12,7 @@ After logging in, users create projects on the Project Page where they can add d
 
 Pulling Data from Multiple Tables
 
-    - Challenge: Taking the data that is stored in multiple tables and outputing them to the screen.
+    - Challenge: Taking the data that is stored in multiple tables and outputting them to the screen.
     - Solution: Creating static async/await class methods that were called inside our routes to output.
 <br>
 Trying to Store User ID and Project ID across multiple pages

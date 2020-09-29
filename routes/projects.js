@@ -37,8 +37,10 @@ router.post("/", async(request,response) => {
     const projectName = request.body.projectTitle;
     const projectDescription = request.body.projectDesc;
     const project_id = request.body.Project_id;
-    
-    await projectModel.currentProjectNumber(project_id)
+    // const project_id = request.body.id;
+    console.log(">>>>>>",request.body);
+
+    await projectModel.currentProjectNumber(project_id);
     await projectModel.currentuserID(userid);
     await projectModel.submitProject(userid,projectName,projectDescription);
     projectData = await projectModel.getAll(userid);
