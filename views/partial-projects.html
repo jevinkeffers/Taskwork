@@ -6,7 +6,6 @@
             </div>
         </div>
     </section>
-
     <section class="section background-grey">
         <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
         <ul>
@@ -21,7 +20,7 @@
             <div class="column">
                 <h1 class="title">Empower Your Dev Team</h1>
                 <h2 class="subtitle">
-                    Taskwork is a user-friendly project management tool that utilizes the scrum framework. Use it to track project tasks, review those in flight and boost team efficiency.
+                A brief description of TASKWORK, how to use it etc!
                 </h2>
             </div>
             <div class="column">
@@ -29,6 +28,7 @@
                     <label class="label">
                         <h1 class="title">Create New Project</h1>
                     </label>
+                    <!-- Need to fix this so it adds into the database -->
                     <input name="projectTitle" class="input project text" type="text" placeholder="Project Title">
                     <br>
                     <textarea name="projectDesc" class="textarea grey text" placeholder="Project Description"></textarea>
@@ -40,7 +40,6 @@
             </div>
         </div>
     </section>
-
     <section class="section background-white">
         <div class="columns is-desktop">
             <div class="column">
@@ -48,7 +47,7 @@
                     <div class="box">
                         <div class="heading">Projects</div>
                         ${data.map(rev => { return `
-                        ${rev.name != '' && rev.is_complete == false && rev.is_approved == false  ? `
+                        ${rev.name != '' && rev.is_complete == false ? `
                         <button type="Submit" name="Project_id" value="${rev.id}" id="updateTodo" class="subtitle has-text-centered">${rev.name}</button>
                         <p>${rev.project_description}</p>
                         ` : `
@@ -65,7 +64,6 @@
                         ${data.map(rev => { return `
                         ${rev.is_complete == true && rev.is_approved == false  ? `
                         <button type="Submit" name="Project_id" value="${rev.id}" id="updateTodo" class="subtitle has-text-centered">${rev.name}</button>
-                        <p>${rev.project_description}</p>
                         ` : `
                         `}
                         ` }).join('')}
@@ -80,7 +78,6 @@
                         ${data.map(rev => { return `
                         ${rev.is_approved == true ? `
                         <button type="Submit" name="Project_id" value="${rev.id}" id="updateTodo" class="subtitle has-text-centered">${rev.name}</button></a>
-                        <p>${rev.project_description}</p>
                         ` : `
                         `}
                         ` }).join('')}
@@ -90,7 +87,6 @@
             </div>
         </div>
     </section>
-
     <section class="footer has-text-centered">
             <a href="/users/logout" class="button is-primary">Logout</a>
     </section>

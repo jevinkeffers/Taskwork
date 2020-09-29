@@ -35,7 +35,7 @@ class projectModel {
     static async currentProjectNumber(projectID){
         
         try{
-            const response = await db.result(`UPDATE currentproject SET current_project_num = $1 WHERE id =1`,[projectID]);        
+            const response = await db.result(`UPDATE currentproject SET current_project_num = $1 WHERE id =1;`,[projectID]);        
             return response;
         } catch (error){
             return error.message;
