@@ -14,16 +14,17 @@ After logging in, users create projects on the Project Page where they can add d
 ## Installation
 
 ## Credits
-**Project Manager, Frontend Development and Design**
+**Project Manager, Frontend Development and Design**: 
 Harmony Trevena
 [GitHub](https://github.com/harmonytrevena)
 
-**Backend Development**
+**Backend Development**: 
 Luke Brazil
-[GitHub](https://github.com/LukeBrazil)
+[GitHub](https://github.com/LukeBrazil),
 Jai Gokhale
 [GitHub](https://github.com/jmg5219)
 
-**Frontend Development, Testing, UX**
+**Frontend Development, Testing and UX**: 
 Kevin Jeffers
 [GitHub](https://github.com/jevinkeffers)
+**[DigitalCrafts](http://digitalcrafts.com)**

@@ -7,7 +7,6 @@ const todoModel = require('../models/todoModel');
 const projectIDModel = require('../models/projectModel');
 
 router.get("/",async (request,response)=>{
-  
     // response.status(200).send("OK").end();
 })
 
