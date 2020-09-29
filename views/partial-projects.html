@@ -49,6 +49,7 @@
                         <div class="heading">Projects</div>
                         ${data.map(rev => { return `
                         ${rev.name != '' && rev.is_complete == false && rev.is_approved == false  ? `
+                        ` : `
                         `}
                         ` }).join('')}
                         <br>

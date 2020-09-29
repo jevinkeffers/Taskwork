@@ -9,9 +9,14 @@ The primary driver behind Taskwork is to deliver a project-management tool with 
 After logging in, users create projects on the Project Page where they can add descriptions and track the overall status of the project. Each project is linked to its own task page, where users can add tasks, advance tasks through different statuses of completion: To Do, In Progress, In Testing and Complete, from where users can move the projects to new states for another team to review the project. Once the In Review team is happy, the project can be moved to Complete once all project requirements have been met and approved.
 
 ## Challenges and Solutions
+
 ## Screenshots
+
 ## Features
+
 ## Installation
+DEPLOYING SOON!
+In the meantime, go to [GitHub](https://github.com/jevinkeffers/Taskwork) fork or clone the repo to your local machine. In the terminal, navigate to the clone repo and type <code>npm i</code> to install all required modules. Once that has completed, type <code>npm run start</code> or <code>npm run dev</code> to launch the app. Following the provided URL to your browser and create an account or sign in as guest to get started.
 
 ## Credits
 **Project Manager, Frontend Development and Design**
